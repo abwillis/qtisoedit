@@ -72,5 +72,11 @@ Qt 5.12+ also works. CMake picks Qt 6 first and falls back to Qt 5.
 - `bk_add()` accepts only names made of ASCII 32–126, so files with non-ASCII names are reported as "invalid character" errors.
 
 ## License
+**BSD 3-Clause License**.
 
-bkisofs is GPL v2. Because this program links it, distribute it under GPL v2-compatible terms.
+    Copyright (c) 2026, abwillis
+
+See [`LICENSE`](LICENSE) for the full text.
+
+bkisofs is GPL v2. 
+

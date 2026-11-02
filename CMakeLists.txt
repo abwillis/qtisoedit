@@ -82,6 +82,13 @@ target_link_libraries(bkiso-qt PRIVATE
     Qt${QT_VERSION_MAJOR}::Concurrent
     bkisofs)
 
+# OS/2: LIBCx must be linked into the executable itself for its extensions
+# (including the mmap exception handler) to be fully active. Qt5 on OS/2
+# memory-maps plugin DLLs while QApplication starts.
+if(CMAKE_SYSTEM_NAME MATCHES "OS2")
+    target_link_libraries(bkiso-qt PRIVATE cx)
+endif()
+
 include(GNUInstallDirs)
 install(TARGETS bkiso-qt RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 endif()
